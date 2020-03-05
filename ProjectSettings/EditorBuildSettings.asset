@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World/World.unity
     guid: 11ee95013d68e44e1b58ec1780be6c75
+  - enabled: 1
+    path: Assets/Scenes/ARPlacement/ARPlacement.unity
+    guid: 405e86d4bd7584989a6847fe6f96855d
   m_configObjects: {}
