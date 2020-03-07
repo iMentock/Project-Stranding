@@ -8,15 +8,21 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ARTapToPlaceObject : MonoBehaviour
 {
+    // Back button
+    public GameObject backButton;
+    public GameObject doneButton;
+    // What will spawn
     public GameObject gameObjectToInstantiate;
-
+    //public PlaceAtLocation placeAtLocation;
     private GameObject spawnedObject;
+    // To detect touch
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
-
+    // "touches"
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     private void Awake() {
+        doneButton.SetActive(false);
         // Required above so safe to use
         _arRaycastManager = GetComponent<ARRaycastManager>();
     }
@@ -43,9 +49,13 @@ public class ARTapToPlaceObject : MonoBehaviour
             // If there is an object already then move it etc. (could limit number and all that here)
             if(spawnedObject == null) {
                 spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
+                doneButton.SetActive(true);
             } else {
                 spawnedObject.transform.position = hitPose.position;
+                doneButton.SetActive(true);
+                //UpdatePlacedObjectsLocation();
             }
+
 
         }
     }

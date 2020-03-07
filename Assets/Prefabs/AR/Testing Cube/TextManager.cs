@@ -7,15 +7,8 @@ public class TextManager : MonoBehaviour
 {
     public Text geoLocationText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        geoLocationText.text = "I have changed the text!";
+    public void UpdateCubeText(string cubeText) {
+        geoLocationText.text = cubeText;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
